@@ -1,0 +1,48 @@
+/* FULL CENTER SCREEN */
+.under-dev{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  width:100%;
+  height:100%;
+
+  padding:40px 20px;   /* 🔥 adds spacing from edges */
+}
+
+/* CARD */
+.under-dev-card{
+  text-align:center;
+  background:white;
+  padding:50px 40px;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  max-width:600px;
+  width:100%;
+  margin:40px auto;
+}
+
+/* TITLE */
+.under-dev-card h1{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+/* TEXT */
+.under-dev-card p{
+  font-size:16px;
+  color:#555;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+/* EMOJI */
+.emoji-row{
+  font-size:28px;
+  letter-spacing:8px;
+}
+
+.page-content{
+  padding-left:40px;   /* 🔥 space from sidebar */
+}
+

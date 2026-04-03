@@ -1,0 +1,226 @@
+# Complete Project Folder Structure
+mortality_project
+│
+├── backend
+│   │
+│   ├── main.py #Start the FastAPI application and connect all APIs. (main.py connects all Routers APIs together.)
+│   ├── config.py #Store project settings (which api call use wich data and more )
+│   ├── database.py #Manage the connection to the database engine.(pipeline between data and back end)
+│   ├── auth.py #Handle authorization and security.
+│   │
+│   ├── routers #Define API endpoints.
+│   │     ├── mortality.py 
+│   │     ├── prediction.py
+│   │     └── population.py
+│   │
+│   ├── services #Contain the actual logic and calculations for the end point.
+│   │     ├── mortality_service.py
+│   │     ├── prediction_service.py
+│   │     └── population_service.py
+│   │
+│   ├── schemas #Define input validation using Pydantic. data validation 
+│   │     ├── mortality_schema.py
+│   │     └── prediction_schema.py
+│   │
+│   └── utils #Store helper functions used in many places.(Measures Like Power BI)
+│         ├── query_builder.py
+│         └── life_table.py
+│
+├── data
+│   ├── mortality.parquet
+│   ├── fertility.parquet
+│   └── population.parquet
+│
+├── models
+│   ├── mortality_model.pkl
+│   ├── survival_model.pkl
+│   └── life_expectancy_model.pkl
+│
+├── frontend
+│   ├── src
+│   │   ├── pages
+│   │   │     Dashboard
+│   │   │     SurvivalCalculator
+│   │   │     CountryExplorer
+│   │   │
+│   │   ├── components
+│   │   │     Chart
+│   │   │     Filters
+│   │   │
+│   │   └── api
+│   │         mortalityApi.js
+│   │         predictionApi.js
+│   │
+│   └── package.json
+│
+├── docker
+│   ├── backend.Dockerfile
+│   └── frontend.Dockerfile
+│
+├── docker-compose.yml
+│
+└── README.md
+
+
+
+
+# High-Level System Architecture
+
+User Browser
+      │
+      ▼
+Frontend (React + ECharts)
+      │
+      ▼
+API Gateway (FastAPI Backend)
+      │
+      ├── Mortality API
+      ├── Prediction API
+      ├── Population API
+      │
+      ▼
+Service Layer
+      │
+      ├── Query Engine (DuckDB)
+      ├── ML Models (.pkl)
+      │
+      ▼
+Data Layer
+      │
+      ├── Parquet datasets
+      └── External datasets (future)
+
+
+
+# Infrastructure Layer (Docker)
+Docker Network
+│
+├── frontend container
+│     React + ECharts
+│
+└── backend container
+      FastAPI + DuckDB
+
+
+
+#Backend Architecture
+API Layer
+   ↓
+Router Layer
+   ↓
+Service Layer
+   ↓
+Data Layer
+
+
+
+#Example flow:
+Frontend request
+   ↓
+FastAPI Router
+   ↓
+Service Function
+   ↓
+DuckDB Query
+   ↓
+Return JSON
+
+
+
+
+
+
+
+# front end 
+mortality-frontend
+│
+├── node_modules
+├── public
+│   └── vite.svg
+│
+├── src
+│
+│   ├── assets
+│   │   ├── logo.png
+│   │   └── priyanshu.jpg
+│   │
+│   ├── components
+│   │
+│   │   └── hero
+│   │       └── HeroSection.tsx
+│   │
+│   ├── layout
+│   │   ├── Navbar.tsx
+│   │   ├── Sidebar.tsx
+│   │   └── PageContainer.tsx
+│   │
+│   ├── pages
+│   │
+│   │   ├── home
+│   │   │   └── HomePage.tsx
+│   │   │
+│   │   ├── country
+│   │   │   └── CountryPage.tsx
+│   │   │
+│   │   ├── comparison
+│   │   │   └── ComparisonPage.tsx
+│   │   │
+│   │   ├── lifeTable
+│   │   │   └── LifeTablePage.tsx
+│   │   │
+│   │   ├── causes
+│   │   │   └── CausesPage.tsx
+│   │   │
+│   │   └── about
+│   │       └── AboutPage.tsx
+│   │
+│   ├── router
+│   │   └── AppRouter.tsx
+│   │
+│   ├── services
+│   │   └── api.ts
+│   │
+│   ├── styles
+│   │   └── global.css
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+
+---------------------------------------
+
+
+File Type Rules (Very Important)
+React Components
+
+Use .tsx
+
+Examples:
+
+Navbar.tsx
+Sidebar.tsx
+DashboardPage.tsx
+MortalityTrendChart.tsx
+Logic / Data / State
+
+Use .ts
+
+Examples:
+
+apiClient.ts
+mortalityService.ts
+filterStore.ts
+useMortality.ts
+formatters.ts
+Styles
+.css
+
+Examples:
+
+global.css
+App.css
+index.css

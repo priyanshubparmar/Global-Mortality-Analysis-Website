@@ -1,0 +1,306 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.layout-body {
+  display: flex;
+  flex: 1;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+  height: 65px;
+
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+
+  z-index: 1000;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  text-decoration: none;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 19px;
+  font-weight: 500;
+  padding: 0 2px;
+}
+
+/* Add separator */
+.nav-center a:not(:last-child)::after {
+  content: "|";
+  margin-left: 12px;
+  color: #9ca3af;
+}
+
+.nav-center a:hover {
+  color: #2563eb;
+}
+
+.dashboard-btn {
+  padding: 8px 16px;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dashboard-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Sidebar container */
+.sidebar {
+  width: 50px;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  transition: width 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+  
+  
+}
+
+/* Navigation layout */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  position: fixed;     /* only this is fixed */
+  top: 100px;          /* adjust below navbar */
+  left: 10px;
+}
+
+/* Sidebar default (collapsed) */
+.sidebar {
+  width: 10;
+  background: #0f172a;
+  color: white;
+  padding: 20px 10px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+/* /* Expand when mouse is over is m,xz */
+
+.sidebar:hover {
+  width: 200px;
+}
+
+
+/* Hover effect for smoother interaction */
+.sidebar a:hover {
+  opacity: 0.8;
+  transform: translateX(4px);
+}
+
+/* Navigation layout */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Links */
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+/* Hide text when collapsed */
+.sidebar:not(:hover) a {
+  opacity: 0;
+}
+
+/* Show text when expanded */
+.sidebar:hover a {
+  opacity: 3;
+}
+
+/* HERO SECTION (outer spacing) */
+.hero {
+  padding: 20px;
+  transition: all 0.4s ease;
+}
+
+/* when hero shrinks after scroll */
+.hero-small {
+  padding: 10px 20px;
+}
+
+
+.hero-card {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;        
+  max-width: 95%;     /* Changed from 1300px to allow it to grow with the screen */
+  margin: 0 auto;
+  border: 2px solid #d1d5db;
+  box-sizing: border-box;
+}
+
+
+/* HERO CONTENT LAYOUT */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+
+.hero-text {
+  flex: 1;
+  max-width: none;    /* Removed the 520px limit so text fills the card width */
+}
+
+.hero-image {
+  flex-shrink: 0;
+}
+/* TITLE */
+.hero-text h1 {
+  font-size: 36px;
+  transition: all 0.4s ease;
+}
+
+
+/* smaller title when scrolling */
+.hero-small .hero-text h1 {
+  font-size: 26px;
+}
+
+
+/* PROFILE IMAGE */
+.hero-image img {
+  width: 200px;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* shrink image when scrolling */
+.hero-small .hero-image img {
+  width: 220px;
+}
+
+
+/* IMAGE HOVER ZOOM */
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+
+/* BUTTON SECTION */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+
+/* BUTTON STYLE */
+.hero-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.hero-buttons{
+  display:flex;
+  gap:20px;
+  margin-top:25px;
+}
+
+
+.hero-btn.primary{
+  background:#1e3a8a;
+}
+
+/* BUTTON HOVER */
+.hero-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+}
+
+.location-icon {
+  color: #2563eb;
+}
+
+.location a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.location a:hover {
+  text-decoration: underline;
+}
+
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.hero-btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hero-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}

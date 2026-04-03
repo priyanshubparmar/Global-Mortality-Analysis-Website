@@ -1,0 +1,100 @@
+.prediction-section{
+  padding:60px 40px;
+  max-width:900px;
+}
+
+.prediction-section h2{
+  margin-bottom:25px;
+  font-size:28px;
+}
+
+.filter-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.predict-btn{
+  background:#2f66d0;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  margin-bottom:40px;
+}
+
+.predict-btn:hover{
+  background:#1f4fb0;
+}
+
+.results-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.result-card{
+  background:white;
+  border-radius:10px;
+  padding:25px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.08);
+}
+
+.result-card h3{
+  font-size:16px;
+  margin-bottom:10px;
+  color:#555;
+}
+
+.result-card p{
+  font-size:26px;
+  font-weight:600;
+  color:#1f2d3d;
+}
+
+.ci-text{
+  font-size:18px;
+  color:#999;
+  font-style:italic;
+}
+
+.ci-note{
+    font-size:18px;
+    font-style: italic;
+    color: gray;
+    margin-left: 4px;
+}
+
+.results-grid{
+  scroll-margin-top: 80px;
+}
+
+.ci-range{
+  
+  color:#888;
+  font-style:italic;
+  font-size:0.95em;
+  font-size:18px;
+}
+
+
+.chart-section{
+  margin-top:70px;
+  padding:30px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
+
+.chart-section h2{
+  margin-bottom:10px;
+}
+
+.chart-description{
+  color:#666;
+  margin-bottom:20px;
+  font-size:14px;
+}
