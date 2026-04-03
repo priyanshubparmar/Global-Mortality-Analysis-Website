@@ -10,7 +10,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8000",  // ✅ FIX
+  baseURL: "https://global-mortality-analysis-website.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
